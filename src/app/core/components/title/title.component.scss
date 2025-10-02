@@ -1,0 +1,19 @@
+.div-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200;
+  }
+
+.div-title p {
+  background-color: #31717C;  /* Couleur verte-bleutée */
+  color: #ffffff;  /* Texte blanc */
+  font-size: 2rem;  //font-family: 'Montserrat', 'Lato', 'Open Sans', sans-serif;
+  font-weight: 100;
+  text-align: justify;
+  padding: 0.3rem 0.7rem;
+  padding-top: 0.1rem;
+  border-radius: 12px;  /* Coins arrondis */
+  display: inline-block;
+  margin-bottom: 1rem;
+}

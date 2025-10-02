@@ -1,1 +1,247 @@
 /* You can add global styles to this file, and also import other style files */
+.bbody {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+}
+
+.home-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 4px 14px 0 rgba(15, 118, 110, 0.3),
+    0 2px 4px 0 rgba(15, 118, 110, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  user-select: none;
+}
+
+.home-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent);
+  transition: left 0.5s;
+}
+
+.home-button:hover::before {
+  left: 100%;
+}
+
+.home-button:hover {
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 25px 0 rgba(15, 118, 110, 0.4),
+    0 4px 8px 0 rgba(15, 118, 110, 0.2);
+}
+
+.home-button:active {
+  transform: translateY(0);
+  box-shadow:
+    0 2px 8px 0 rgba(15, 118, 110, 0.3),
+    0 1px 2px 0 rgba(15, 118, 110, 0.1);
+}
+
+.home-button:focus {
+  outline: none;
+  box-shadow:
+    0 4px 14px 0 rgba(15, 118, 110, 0.3),
+    0 2px 4px 0 rgba(15, 118, 110, 0.1),
+    0 0 0 3px rgba(15, 118, 110, 0.2);
+}
+
+.home-icon {
+  transition: transform 0.3s ease;
+}
+
+.home-button:hover .home-icon {
+  transform: scale(1.1);
+}
+
+.home-text {
+  font-family: inherit;
+  letter-spacing: 0.025em;
+}
+
+/* Variante compacte */
+.home-button.compact {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+.home-button.compact .home-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Variante icône seulement */
+.home-button.icon-only {
+  padding: 12px;
+  border-radius: 50%;
+  min-width: 48px;
+  min-height: 48px;
+  justify-content: center;
+}
+
+.home-button.icon-only .home-text {
+  display: none;
+}
+
+/* Animation de pulsation (optionnelle) */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.home-button.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .home-button .home-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+
+// .home-btn {
+//   font-size: 48px;       /* taille grande */
+//   color: white;          /* couleur personnalisée */
+//   background: #5f9ea0;    /* fond transparent */
+//   border: 2px solid #5f9ea0; /* contour bleu-vert */
+//   border: none;
+//   border-radius: 12px;
+//   cursor: pointer;
+//   transition: transform 0.2s;
+// }
+// .home-btn:hover {
+//   transform: scale(1.2);      /* effet zoom au survol */
+//   background: #5f9ea0;        /* fond bleu-vert */
+//   color: white;               /* flèche devient blanche */
+// }
+
+.pie-label {
+  font-size: 16px !important;
+
+}
+
+.div-card {
+
+  display: flex;
+  flex-direction: row;         /* mettre les élelments sur une ligne */
+  justify-content: center;     /* centrer horizontalement */
+  align-items: center;         /* centrer verticalement */
+  gap: 20px;                   /* espace entre les éléments */
+  flex-wrap: wrap;  /* permet de passer à la ligne si pas assez de place */
+
+
+
+}
+
+
+/* Tooltip container */
+ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+    .tooltip-caret.position-top {
+    border-top : 11px solid #3b7d87;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  
+  }
+  background: #3b7d87 !important;
+  color: #fff !important;
+  border-radius: 8px;
+  text-align: center;
+  padding: 0px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Label COUNTRY */
+ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 20px;
+}
+
+/* Value (avec icône avant) */
+ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val {
+  font-size: 22px;
+//  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajout icône ruban SVG avant la valeur */
+ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin-right: 0; /* pas d’espace entre l’icône et la valeur */
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-7 7c0 3.87 3.13 7 7 7s7-3.13 7-7a7 7 0 0 0-7-7zm0 18l-4 2v-6.7c1.2.55 2.5.7 4 .7s2.8-.15 4-.7V22l-4-2z'/></svg>") no-repeat center;
+  background-size: contain;
+}
+// ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
+//   font-family: "Font Awesome 5 Free";
+//   content: "\f559"; /* Unicode de fa-award */
+//   font-weight: 900;
+//   font-size: 16px;
+//   margin-right: 2px;
+// }
+
+// .chart-container {
+//   padding-top: 40px;
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+//   aspect-ratio: 1 / 1;
+// }
+
+// ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
+//   .tooltip-caret.position-top {
+//     border-top : 11px solid #3b7d87;
+//     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+  
+//   }
+
+//   background-color: #6b9aa8;
+//   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+// }
