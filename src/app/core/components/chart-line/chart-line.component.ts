@@ -11,7 +11,7 @@ export class ChartLineComponent {
 // charger les données de linecharts
 @Input() resultData!: LineChartResult[]
 
-  view: [number, number] = [900, 300]; // taille du graphique
+  view: [number, number] = [600, 300]; // taille du graphique
 
   // options
   showXAxis = true;

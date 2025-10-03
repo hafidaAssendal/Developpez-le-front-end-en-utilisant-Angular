@@ -1,14 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.bbody {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // min-height: 100vh;
-}
 
 .home-button {
   display: inline-flex;
@@ -142,21 +132,6 @@
 }
 
 
-// .home-btn {
-//   font-size: 48px;       /* taille grande */
-//   color: white;          /* couleur personnalisée */
-//   background: #5f9ea0;    /* fond transparent */
-//   border: 2px solid #5f9ea0; /* contour bleu-vert */
-//   border: none;
-//   border-radius: 12px;
-//   cursor: pointer;
-//   transition: transform 0.2s;
-// }
-// .home-btn:hover {
-//   transform: scale(1.2);      /* effet zoom au survol */
-//   background: #5f9ea0;        /* fond bleu-vert */
-//   color: white;               /* flèche devient blanche */
-// }
 
 .pie-label {
   font-size: 16px !important;
@@ -219,29 +194,3 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-7 7c0 3.87 3.13 7 7 7s7-3.13 7-7a7 7 0 0 0-7-7zm0 18l-4 2v-6.7c1.2.55 2.5.7 4 .7s2.8-.15 4-.7V22l-4-2z'/></svg>") no-repeat center;
   background-size: contain;
 }
-// ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
-//   font-family: "Font Awesome 5 Free";
-//   content: "\f559"; /* Unicode de fa-award */
-//   font-weight: 900;
-//   font-size: 16px;
-//   margin-right: 2px;
-// }
-
-// .chart-container {
-//   padding-top: 40px;
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-//   aspect-ratio: 1 / 1;
-// }
-
-// ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
-//   .tooltip-caret.position-top {
-//     border-top : 11px solid #3b7d87;
-//     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-  
-//   }
-
-//   background-color: #6b9aa8;
-//   box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-// }
