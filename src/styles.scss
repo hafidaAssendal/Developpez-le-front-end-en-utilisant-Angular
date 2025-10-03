@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 .home-button {
+  margin-top: 20px;
+  margin-left: 20px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap:8px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  background: linear-gradient(135deg, #31717C 0%, #31717C  100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -41,7 +43,7 @@
 }
 
 .home-button:hover {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  background: linear-gradient(135deg, #31717C  0%, #31717C  100%);
   transform: translateY(-2px);
   box-shadow:
     0 8px 25px 0 rgba(15, 118, 110, 0.4),
@@ -193,4 +195,21 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   margin-right: 0; /* pas d’espace entre l’icône et la valeur */
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-7 7c0 3.87 3.13 7 7 7s7-3.13 7-7a7 7 0 0 0-7-7zm0 18l-4 2v-6.7c1.2.55 2.5.7 4 .7s2.8-.15 4-.7V22l-4-2z'/></svg>") no-repeat center;
   background-size: contain;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* espace entre gauche et droite */
+  flex-wrap: wrap; 
+  padding: 1rem 2rem;
+  position: relative; /* nécessaire pour centrer le titre en absolu */
+}
+
+.header-container app-title {
+  display:flex;
+  flex-wrap: wrap; 
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* centre parfaitement */
 }
