@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of, reduce } from 'rxjs';
+import { Observable, of, reduce, Subscription } from 'rxjs';
 import { LineChartResult } from 'src/app/core/models/LineChartResult';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { OlympicService } from 'src/app/core/services/olympic.service';
@@ -10,10 +10,10 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
-export class DetailsComponent implements OnInit {
+export class DetailsComponent implements OnInit, OnDestroy {
   titrePrincipale: string = 'country name'
   public olympics$: Observable<any> = of(null);
-//  public olympics$!: Observable<Olympic>;
+  //  public olympics$!: Observable<Olympic>;
   countryName!: string;
   // nombre de participations aux JO ;
   participationNbr!: number;
@@ -24,10 +24,14 @@ export class DetailsComponent implements OnInit {
   // resultat de graphique à envoyer
   lineChartResult!: LineChartResult[];
 
+  subcription!: Subscription
+
   constructor(private olympicService: OlympicService, private route: ActivatedRoute, private router: Router) {
 
   }
-
+  ngOnDestroy(): void {
+    this.subcription.unsubscribe();
+  }
   ngOnInit(): void {
     // Écouter les queryParams
     this.route.params.subscribe(params => {
@@ -38,7 +42,7 @@ export class DetailsComponent implements OnInit {
     });
     // charger les donnée de pays selectionné 
     this.olympics$ = this.olympicService.getOlympics();
-    this.olympics$.subscribe(data => {
+    this.subcription = this.olympics$.subscribe(data => {
       //console.log("Données reçues + country name  :", data, "countryname", this.countryName);
       const country = data.find((c: any) => c.country === this.countryName);//
       if (country) {
@@ -51,7 +55,7 @@ export class DetailsComponent implements OnInit {
         console.log("le resultat de line chart avant ", this.lineChartResult);
 
         this.lineChartResult = [{
-          name:"",
+          name: "",
           series: country.participations.map((c: any) => ({
             name: c.year,
             value: c.medalsCount // somme des medaille par country // ou un autre champ si tu veux un nombre
