@@ -1,4 +1,4 @@
-export class DataResult{
-name!:string;
-value!:number;
+export interface DataResult{
+name:string;
+value:number;
 }

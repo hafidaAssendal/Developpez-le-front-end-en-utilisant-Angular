@@ -1,9 +1,9 @@
 import {  Participation} from "./Participation";
 
-export class Olympic
+export interface Olympic
 {
-    id!:number;
-    country!: string;
-    participations!: Participation;
+    id:number;
+    country: string;
+    participations: Participation;
 }
 
