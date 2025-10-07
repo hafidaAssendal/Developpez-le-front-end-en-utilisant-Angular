@@ -7,10 +7,10 @@ import { DetailsComponent } from './pages/details/details.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, },
   { path: 'home', component: HomeComponent, },
-  { path: 'details/:name', component: DetailsComponent, },// ajouter les paramettres
+  { path: 'details/:name', component: DetailsComponent},
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: '**', /* wildcard*/  component: NotFoundComponent, },
-  // le name n existe pas 
+  { path: '**', component: NotFoundComponent,},
+  
 ];
 
 @NgModule({
@@ -18,6 +18,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {
-
 
 }

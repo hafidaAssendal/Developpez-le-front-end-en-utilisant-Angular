@@ -7,13 +7,8 @@ import { LineChartResult } from '../../models/LineChartResult';
   styleUrl: './chart-line.component.scss'
 })
 export class ChartLineComponent {
-
-// charger les données de linecharts
 @Input() resultData!: LineChartResult[]
-
-  view: [number, number] = [600, 300]; // taille du graphique
-
-  // options
+  view: [number, number] = [550, 300]; 
   showXAxis = true;
   showYAxis = true;
   gradient = false;

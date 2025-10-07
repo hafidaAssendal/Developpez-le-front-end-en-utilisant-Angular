@@ -12,18 +12,18 @@ import { ChartComponent } from './core/components/chart/chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
-import { NgxTooltipDirectivesModule, MockTooltipTemplateDirective } from 'ngx-tooltip-directives';
 import { ChartLineComponent } from './core/components/chart-line/chart-line.component';
-import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFoundComponent, DetailsComponent,TitleComponent,CardComponent,ChartComponent,ChartLineComponent],
-  imports: [CommonModule,
-   
+  imports: [
+    CommonModule,
     BrowserModule,
     NgxChartsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule, MockTooltipTemplateDirective],
+    HttpClientModule,
+    ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -1,19 +1,15 @@
 .chart-container {
     display: flex;
     justify-content: center;
-    /* centre horizontalement */
     align-items: center;
-    /* centre verticalement si hauteur définie */
     margin-top: 10px;
     justify-self: center;
     width: 100%;
     max-width: 800px;
     height: 400px;
-    /* optionnel : fixe la hauteur pour le centrage vertical */
     position: relative;
 
 }
-
 /* Responsive pour tablette */
 @media (max-width: 1024px) {
     .chart-container {

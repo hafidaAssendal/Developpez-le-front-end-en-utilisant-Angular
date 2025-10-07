@@ -11,5 +11,4 @@ import { count, filter, map } from 'rxjs';
 export class CardComponent{
 @Input() title:string="title card";
 @Input() value : number=10;
-
 }
