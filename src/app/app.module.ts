@@ -15,7 +15,16 @@ import { CommonModule } from '@angular/common';
 import { ChartLineComponent } from './core/components/chart-line/chart-line.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NotFoundComponent, DetailsComponent,TitleComponent,CardComponent,ChartComponent,ChartLineComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent, 
+    NotFoundComponent, 
+    DetailsComponent,
+    TitleComponent,
+    CardComponent,
+    ChartComponent,
+    ChartLineComponent
+  ],
   imports: [
     CommonModule,
     BrowserModule,

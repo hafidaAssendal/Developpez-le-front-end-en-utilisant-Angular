@@ -9,6 +9,6 @@ import { filter } from 'rxjs';
 })
 
 export class TitleComponent  {
-  @Input() PrincipalTitre!:string;
+  @Input() title!:string;
   
 }

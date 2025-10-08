@@ -13,9 +13,9 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class DetailsComponent implements OnInit, OnDestroy {
  
   public olympics$: Observable<any> = of(null);
-  titrePrincipale!: string;
+  title!: string;
   countryName!: string;
-  participationNbr!: number;
+  participationNembre!: number;
   totalMedals!: number;
   totalAthlets!: number;
   lineChartResult!: LineChartResult[];
@@ -29,10 +29,10 @@ export class DetailsComponent implements OnInit, OnDestroy {
       this.subcription = this.olympics$.subscribe(data => {
           const country = data.find((c: any) => c.country === this.countryName);
           if (country) {
-              this.titrePrincipale = country.country;
+              this.title = country.country;
               this.totalAthlets = country.participations.reduce((sum: number, part: any) => sum + part.athleteCount, 0);  
               this.totalMedals = country.participations.reduce((sum: number, part: any) => sum + part.medalsCount, 0);   
-              this.participationNbr = country.participations.length;
+              this.participationNembre = country.participations.length;
               this.lineChartResult = [{
                                         name: "",
                                         series: country.participations.map((c: any) => ({

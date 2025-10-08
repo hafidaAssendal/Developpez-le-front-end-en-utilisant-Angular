@@ -12,8 +12,8 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   public olympics$: Observable<any> = of(null);
-  JoNembre: number = 0;
-  CountryNbr!: number;
+  jONembre: number = 0;
+  countryNembre!: number;
   dataResult!: DataResult[];
   subcription!: Subscription;
 
@@ -22,12 +22,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
     this.subcription = this.olympics$.subscribe(data => {
-            this.JoNembre = new Set(data.flatMap((c: any) => c.participations.map((p: any) => p.year))).size;
-            this.CountryNbr = data.length;
-            this.dataResult = data.map((p: any) => ({
-                name: p.country,
-                value: p.participations.reduce((sum: number, part: any) => sum + part.medalsCount, 0)  
-              }));
+      this.countryNembre = data.length;
+      this.jONembre = new Set(data.flatMap((c: any) => c.participations.map((p: any) => p.year))).size;
+      this.dataResult = data.map((p: any) => ({
+        name: p.country,
+        value: p.participations.reduce((sum: number, part: any) => sum + part.medalsCount, 0)
+      }));
     });
 
   }
@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
-  chargerDetailDe(country: any): void {
+  loadCountryDetails(country: DataResult): void {
     this.router.navigate(['/details', country.name]);
-    }
+  }
 
 }

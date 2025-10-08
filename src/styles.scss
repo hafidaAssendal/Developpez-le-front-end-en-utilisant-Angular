@@ -194,6 +194,8 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-7 7c0 3.87 3.13 7 7 7s7-3.13 7-7a7 7 0 0 0-7-7zm0 18l-4 2v-6.7c1.2.55 2.5.7 4 .7s2.8-.15 4-.7V22l-4-2z'/></svg>") no-repeat center;
   background-size: contain;
 }
+/*supprimer le circle de name dans chart line tooltips */
+
 
 .header-container {
   display: flex;

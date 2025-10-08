@@ -1,22 +1,22 @@
 <app-title 
-    PrincipalTitre='Medal per Country'>
+    title='Medal per Country'>
 </app-title>
-<div class="div-card">
 
+<div class="div-card">
   <app-card 
       title="Number of JO" 
-      [value]=JoNembre>
+      [value]=jONembre>
   </app-card>
-
   <app-card 
       title="Number of countries" 
-      [value]=CountryNbr>
+      [value]=countryNembre>
   </app-card>
 </div>
+
 <div>
   <app-chart 
        [result]="dataResult" 
-       (countrySelected)="chargerDetailDe($event)">
+       (countrySelected)="loadCountryDetails($event)">
 
   </app-chart>
 </div>
