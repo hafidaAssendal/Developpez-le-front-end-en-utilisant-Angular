@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, of, Subscription } from 'rxjs';
 import { DataResult } from 'src/app/core/models/DataResult';
+import { Olympic } from 'src/app/core/models/Olympic';
+import { Participation } from 'src/app/core/models/Participation';
 import { OlympicService } from 'src/app/core/services/olympic.service';
 
 @Component({
@@ -11,29 +13,30 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  public olympics$: Observable<any> = of(null);
-  jONembre: number = 0;
-  countryNembre!: number;
+  public olympics$: Observable<Olympic[] | null> = of(null);
+  jONumbre: number = 0;
+  countryNumbre!: number;
   dataResult!: DataResult[];
-  subcription!: Subscription;
+  subscription!: Subscription;
 
   constructor(private olympicService: OlympicService, private router: Router) { }
 
   ngOnInit(): void {
     this.olympics$ = this.olympicService.getOlympics();
-    this.subcription = this.olympics$.subscribe(data => {
-      this.countryNembre = data.length;
-      this.jONembre = new Set(data.flatMap((c: any) => c.participations.map((p: any) => p.year))).size;
-      this.dataResult = data.map((p: any) => ({
+    this.subscription = this.olympics$.subscribe(data => {
+      if (!data) return ;
+      this.countryNumbre = data.length;
+      this.jONumbre = new Set(data.flatMap((c: Olympic) => c.participations.map((p: Participation) => p.year))).size;
+      this.dataResult = data.map((p: Olympic) => ({
         name: p.country,
-        value: p.participations.reduce((sum: number, part: any) => sum + part.medalsCount, 0)
+        value: p.participations.reduce((sum: number, part: Participation) => sum + part.medalsCount, 0)
       }));
     });
 
   }
 
   ngOnDestroy(): void {
-    this.subcription.unsubscribe();
+    this.subscription.unsubscribe();
 
   }
 

@@ -4,6 +4,6 @@ export interface Olympic
 {
     id:number;
     country: string;
-    participations: Participation;
+    participations: Participation[];
 }
 
