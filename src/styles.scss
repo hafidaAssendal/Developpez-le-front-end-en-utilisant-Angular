@@ -1,144 +1,4 @@
-.home-button {
-  margin-top: 20px;
-  margin-left: 20px;
-  display: inline-flex;
-  align-items: center;
-  gap:8px;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #31717C 0%, #31717C  100%);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow:
-    0 4px 14px 0 rgba(15, 118, 110, 0.3),
-    0 2px 4px 0 rgba(15, 118, 110, 0.1);
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  user-select: none;
-}
-
-.home-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.2),
-      transparent);
-  transition: left 0.5s;
-}
-
-.home-button:hover::before {
-  left: 100%;
-}
-
-.home-button:hover {
-  background: linear-gradient(135deg, #31717C  0%, #31717C  100%);
-  transform: translateY(-2px);
-  box-shadow:
-    0 8px 25px 0 rgba(15, 118, 110, 0.4),
-    0 4px 8px 0 rgba(15, 118, 110, 0.2);
-}
-
-.home-button:active {
-  transform: translateY(0);
-  box-shadow:
-    0 2px 8px 0 rgba(15, 118, 110, 0.3),
-    0 1px 2px 0 rgba(15, 118, 110, 0.1);
-}
-
-.home-button:focus {
-  outline: none;
-  box-shadow:
-    0 4px 14px 0 rgba(15, 118, 110, 0.3),
-    0 2px 4px 0 rgba(15, 118, 110, 0.1),
-    0 0 0 3px rgba(15, 118, 110, 0.2);
-}
-
-.home-icon {
-  transition: transform 0.3s ease;
-}
-
-.home-button:hover .home-icon {
-  transform: scale(1.1);
-}
-
-.home-text {
-  font-family: inherit;
-  letter-spacing: 0.025em;
-}
-
-/* Variante compacte */
-.home-button.compact {
-  padding: 8px 16px;
-  font-size: 14px;
-  border-radius: 8px;
-}
-
-.home-button.compact .home-icon {
-  width: 16px;
-  height: 16px;
-}
-
-/* Variante icône seulement */
-.home-button.icon-only {
-  padding: 12px;
-  border-radius: 50%;
-  min-width: 48px;
-  min-height: 48px;
-  justify-content: center;
-}
-
-.home-button.icon-only .home-text {
-  display: none;
-}
-
-/* Animation de pulsation (optionnelle) */
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-}
-
-.home-button.animate-pulse {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .home-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .home-button .home-icon {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-
-
-.pie-label {
-  font-size: 16px !important;
-
-}
-
-.div-card {
+.card {
 
   display: flex;
   flex-direction: row;         /* mettre les élelments sur une ligne */
@@ -147,10 +7,26 @@
   gap: 20px;                   /* espace entre les éléments */
   flex-wrap: wrap;  /* permet de passer à la ligne si pas assez de place */
 
-
-
+}
+.card-items {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    width: fit-content;      // Largeur ajustée au contenu 
+    border: 2px solid #31717C ;
+    color: #000000;      
+    padding: 1rem 1rem;      // Large entre texte et le cadre
+    border-radius: 1rem;
+    font-size: 18px;         // texte 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3); // reflet de box 
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+ 
 }
 
+.pie-label {
+  font-size: 16px !important;
+
+}
 
 /* Tooltip container */
 ngx-tooltip-content.ngx-charts-tooltip-content.type-tooltip {
@@ -178,7 +54,6 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-label {
 /* Value (avec icône avant) */
 ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val {
   font-size: 22px;
-//  font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -194,7 +69,6 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M12 2a7 7 0 0 0-7 7c0 3.87 3.13 7 7 7s7-3.13 7-7a7 7 0 0 0-7-7zm0 18l-4 2v-6.7c1.2.55 2.5.7 4 .7s2.8-.15 4-.7V22l-4-2z'/></svg>") no-repeat center;
   background-size: contain;
 }
-/*supprimer le circle de name dans chart line tooltips */
 
 
 .header-container {
@@ -213,3 +87,4 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   left: 50%;
   transform: translateX(-50%); /* centre parfaitement */
 }
+/*supprimer le circle de name dans chart line tooltips */
