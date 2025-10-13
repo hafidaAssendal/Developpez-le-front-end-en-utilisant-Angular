@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of, reduce, Subscription } from 'rxjs';
-import { DataResult } from 'src/app/core/models/DataResult';
+import { Observable, of, Subscription } from 'rxjs';
 import { LineChartResult } from 'src/app/core/models/LineChartResult';
 import { Olympic } from 'src/app/core/models/Olympic';
 import { Participation } from 'src/app/core/models/Participation';
@@ -37,7 +36,7 @@ export class DetailsComponent implements OnInit, OnDestroy {
               this.totalMedals = country.participations.reduce((sum: number, part: Participation) => sum + part.medalsCount, 0);   
               this.participationNumber = country.participations.length;
               this.lineChartResult = [{
-                                        name: "",
+                                        name: "JO",
                                         series: country.participations.map((c: Participation) => ({
                                                                                             name: c.year.toString(),
                                                                                             value: c.medalsCount 

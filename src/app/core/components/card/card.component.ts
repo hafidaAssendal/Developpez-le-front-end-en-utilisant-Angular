@@ -9,6 +9,6 @@ import { count, filter, map } from 'rxjs';
   styleUrl: './card.component.scss'
 })
 export class CardComponent{
-@Input() title:string="title card";
-@Input() value : number=10;
+@Input() title!:string;
+@Input() value!: number;
 }

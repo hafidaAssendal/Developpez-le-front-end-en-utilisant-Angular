@@ -1,6 +1,4 @@
-import { Component, Injectable, Input, OnInit } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
-import { filter } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-title',

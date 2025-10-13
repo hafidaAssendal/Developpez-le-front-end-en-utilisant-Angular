@@ -1,24 +1,23 @@
 .card {
 
   display: flex;
-  flex-direction: row;         /* mettre les élelments sur une ligne */
-  justify-content: center;     /* centrer horizontalement */
-  align-items: center;         /* centrer verticalement */
-  gap: 20px;                   /* espace entre les éléments */
-  flex-wrap: wrap;  /* permet de passer à la ligne si pas assez de place */
+  flex-direction: row;       
+  justify-content: center;     
+  align-items: center;        
+  gap: 20px;                
+  flex-wrap: wrap;  
 
 }
 .card-items {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    width: fit-content;      // Largeur ajustée au contenu 
+    width: fit-content;      
     border: 2px solid #31717C ;
     color: #000000;      
-    padding: 1rem 1rem;      // Large entre texte et le cadre
+    padding: 1rem 1rem;      
     border-radius: 1rem;
-    font-size: 18px;         // texte 
+    font-size: 18px;         
     text-align: center;
-    box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3); // reflet de box 
-    letter-spacing: 0.5px;
+    box-shadow: 0 10px 30px rgba(74, 144, 164, 0.3); 
     margin-bottom: 1rem;
  
 }
@@ -88,3 +87,11 @@ ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-val::before {
   transform: translateX(-50%); /* centre parfaitement */
 }
 /*supprimer le circle de name dans chart line tooltips */
+// ngx-tooltip-content.ngx-charts-tooltip-content {
+//   display: none !important;
+// }
+
+// Ou pour cacher seulement certains éléments
+ngx-tooltip-content.ngx-charts-tooltip-content .tooltip-label::before  {
+  content: none !important;
+}
