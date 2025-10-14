@@ -1,11 +1,17 @@
+.home-button-container{
+  margin-top: 2rem;
+  margin-left: 2rem;
+  flex-direction: row;
+}
+
 .home-button {
   margin-top: 20px;
   margin-left: 20px;
   display: inline-flex;
   align-items: center;
-  gap:8px;
+  gap: 8px;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #31717C 0%, #31717C  100%);
+  background: linear-gradient(135deg, #31717C 0%, #31717C 100%);
   color: white;
   border: none;
   border-radius: 12px;
@@ -41,7 +47,7 @@
 }
 
 .home-button:hover {
-  background: linear-gradient(135deg, #31717C  0%, #31717C  100%);
+  background: linear-gradient(135deg, #31717C 0%, #31717C 100%);
   transform: translateY(-2px);
   box-shadow:
     0 8px 25px 0 rgba(15, 118, 110, 0.4),
@@ -131,4 +137,3 @@
     height: 18px;
   }
 }
-

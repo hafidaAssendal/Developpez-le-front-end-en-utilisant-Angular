@@ -17,11 +17,11 @@ export class OlympicService {
 
   loadInitialData() {
     return this.http.get<Olympic[]>(this.olympicUrl).pipe(
-      tap((value) => this.olympics$.next(value)),
-      catchError((error, caught) => {
-        console.error(error);
-        this.olympics$.next(null);
-        return caught;
+                                                       tap((value) => this.olympics$.next(value)),
+                                                       catchError((error, caught) => {
+                                                             console.error(error);
+                                                             this.olympics$.next(null);
+                                                             return caught;
       })
     );
   }
