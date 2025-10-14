@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, input, Input, OnInit, Output, TemplateRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DataResult } from '../../models/DataResult';
 
 @Component({

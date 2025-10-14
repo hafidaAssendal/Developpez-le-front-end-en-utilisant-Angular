@@ -1,6 +1,6 @@
 import { DataResult } from "./DataResult";
-
-export interface LineChartResult{
+export interface LineChartResult
+{
 name:string;
 series:DataResult[];
 

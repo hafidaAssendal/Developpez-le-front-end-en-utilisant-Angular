@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LineChartResult } from '../../models/LineChartResult';
 
 @Component({

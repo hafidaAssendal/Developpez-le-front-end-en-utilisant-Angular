@@ -1,7 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { OlympicService } from '../../services/olympic.service';
-import { Olympic } from '../../models/Olympic';
-import { count, filter, map } from 'rxjs';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card',
