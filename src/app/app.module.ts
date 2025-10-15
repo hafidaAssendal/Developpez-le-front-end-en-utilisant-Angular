@@ -11,7 +11,6 @@ import { CardComponent } from './core/components/card/card.component';
 import { ChartComponent } from './core/components/chart/chart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CommonModule } from '@angular/common';
 import { ChartLineComponent } from './core/components/chart-line/chart-line.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { ChartLineComponent } from './core/components/chart-line/chart-line.comp
     ChartLineComponent
   ],
   imports: [
-    CommonModule,
     BrowserModule,
     NgxChartsModule,
     BrowserAnimationsModule,
