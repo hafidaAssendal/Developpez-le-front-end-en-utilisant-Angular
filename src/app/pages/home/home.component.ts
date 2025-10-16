@@ -14,7 +14,7 @@ import { OlympicService } from 'src/app/core/services/olympic.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   public olympics$: Observable<Olympic[] | null> = of(null);
-  jONumbre: number = 0;
+  jONumbre!: number;
   countryNumbre!: number;
   dataResult!: DataResult[];
   subscription!: Subscription;
